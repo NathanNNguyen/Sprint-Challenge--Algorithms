@@ -5,6 +5,20 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
     
-    # TBC
+    # make a variable to keep track of the 
+    # number we hit the letters
+    count = 0
+    # base case
+    if len(word) == 0:
+        return count
     
-    pass
+    # recursive case
+    # checking every 2 letter of the word
+    # until we hit the base case
+    if word[:2] == 'th':
+        count += 1
+        return count + count_th(word[1:])
+
+    return count_th(word[1:])
+
+# print(count_th('awwaethth'))
